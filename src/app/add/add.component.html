@@ -1,3 +1,31 @@
-<p>
-  add works!
-</p>
+<div>
+    <div class="form-group">
+      <label for="tipo">Tipo da Despesa</label>
+            <select [(ngModel)]="despesa.tipo" id="tipo" class="form-control">
+              <option value="Mercado">Mercado</option>
+              <option value="Lazer">Lazer</option>
+              <option value="Saúde">Saúde</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome da Despesa</label>
+            <input type="text" [(ngModel)]="despesa.nome" id="nome" required placeholder="Digite o nome..." class="form-control">
+      		</div>
+          <div class="form-group">
+            <label for="data">Data da Despesa</label>
+            <div class="input-group">
+              <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div>
+              <input type="date" [(ngModel)]="data" id="data" class="form-control" required>
+            </div>
+          </div>
+      		<div class="form-group">
+            <label for="valor">Valor da Despesa</label>
+            <div class="input-group">
+              <div class="input-group-addon">R$</div>
+              <input type="number" [(ngModel)]="despesa.valor" id="valor" class="form-control text-right" required placeholder="Digite o valor...">
+      			</div>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="save()"><div class="glyphicon glyphicon-usd"></div> Salvar despesa</button>
+            </div>
+          </div>
+      </div>

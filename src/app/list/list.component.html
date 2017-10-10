@@ -1,3 +1,24 @@
-<p>
-  list works!
-</p>
+<div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let despesa of despesas">
+                                    <td><div class="glyphicon {{despesa.icone}}"></div> {{despesa.tipo}}</td>
+                                    <td>{{despesa.data | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+                                    <td>{{despesa.nome}}</td>
+                                    <td>{{despesa.valor}}</td>
+                                    <td>
+                                <button class="delete" (click)="del(despesa.id)" ><div class="glyphicon glyphicon-trash"></div></button>
+                               </tr>
+                            </tbody>
+                          </table>
+            </div>
+<button class="btn btn-primary" (click)="add()"><div  class="glyphicon glyphicon-plus"></div> Adicionar despesa</button>
